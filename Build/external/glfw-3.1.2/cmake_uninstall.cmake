@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/install_manifest.txt")
-  message(FATAL_ERROR "Cannot find install manifest: \"/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/install_manifest.txt\"")
+if (NOT EXISTS "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/install_manifest.txt")
+  message(FATAL_ERROR "Cannot find install manifest: \"/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/install_manifest.txt\"")
 endif()
 
-file(READ "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/install_manifest.txt" files)
+file(READ "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

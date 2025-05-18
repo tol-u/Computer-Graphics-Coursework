@@ -1,80 +1,36 @@
-# CMake entry point
-cmake_minimum_required (VERSION 3.0)
-project (Computer_Graphics_Coursework)
+cmake_minimum_required(VERSION 3.0)
+project(Coursework)
 
+# Find OpenGL
 find_package(OpenGL REQUIRED)
 
-if( CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR )
-    message( FATAL_ERROR "Please select another Build Directory!" )
-endif()
+# Add all external libraries by including the CMakeLists.txt in the external directory
+# This will build GLFW, GLEW, etc., and set up their include paths.
+add_subdirectory(external)
 
-# Compile external dependencies 
-add_subdirectory (external)
+# Add our executable using coursework.cpp
+add_executable(Coursework src/coursework.cpp)
 
-# On Visual 2005 and above, this module can set the debug working directory
-cmake_policy(SET CMP0026 OLD)
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/external/rpavlik-cmake-modules-fe2273")
-include(CreateLaunchers)
-include(MSVCMultipleProcessCompile) # /MP
-
-include_directories(
-	external/glfw-3.1.2/include/
-	external/glew-1.13.0/include/
-	external/glm-0.9.7.1/
-	.
+# Explicitly tell Coursework where to find various headers
+# Paths are relative to this CMakeLists.txt file (project root)
+target_include_directories(Coursework PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/glfw-3.1.2/include  # For GLFW/glfw3.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/glm-0.9.7.1        # For glm/glm.hpp etc. (GLM is header-only)
+    # GLEW headers should be handled by linking GLEW_1130 which has INTERFACE includes
 )
 
-set(ALL_LIBS
-	${OPENGL_LIBRARY}
-	glfw
-	GLEW_1130
+# Link Coursework against OpenGL, GLEW, GLFW, and necessary macOS frameworks
+# GLEW_1130 and glfw are targets created by external/CMakeLists.txt
+target_link_libraries(Coursework PRIVATE
+    ${OPENGL_LIBRARIES}
+    GLEW_1130                # Target from external/CMakeLists.txt
+    glfw                     # Target from external/CMakeLists.txt (via external/glfw-3.1.2)
+    "-framework Cocoa"
+    "-framework IOKit"
+    "-framework CoreFoundation"
+    "-framework CoreGraphics"
+    "-framework CoreVideo"
 )
 
-add_definitions(
-	-DTW_STATIC
-	-DTW_NO_LIB_PRAGMA
-	-DTW_NO_DIRECT3D
-	-DGLEW_STATIC
-	-D_CRT_SECURE_NO_WARNINGS
-)
-
-# ==============================================================================
-add_executable(Computer_Graphics_Coursework
-	source/coursework.cpp
-	source/vertexShader.glsl
-	source/fragmentShader.glsl
-
-	common/shader.hpp
-	common/texture.hpp
-	common/stb_image.hpp
-	common/maths.hpp
-	common/maths.cpp
-	common/camera.hpp
-	common/camera.cpp
-	common/model.hpp
-	common/model.cpp
-	common/light.hpp
-	common/light.cpp
-
-)
-target_link_libraries(Computer_Graphics_Coursework
-	${ALL_LIBS}
-)
-
-# Xcode and Visual working directories
-set_target_properties(Computer_Graphics_Coursework PROPERTIES XCODE_ATTRIBUTE_CONFIGURATION_BUILD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/source/")
-create_target_launcher(Computer_Graphics_Coursework WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/source/")
-create_default_target_launcher(Computer_Graphics_Coursework WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/source/") 
-
-# ==============================================================================
-if (NOT ${CMAKE_GENERATOR} MATCHES "Xcode" )
-
-add_custom_command(
-   TARGET Computer_Graphics_Coursework POST_BUILD
-   COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/Computer_Graphics_Coursework${CMAKE_EXECUTABLE_SUFFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/source/"
-)
-
-elseif (${CMAKE_GENERATOR} MATCHES "Xcode" )
-
-endif (NOT ${CMAKE_GENERATOR} MATCHES "Xcode" )
-
+# If you need to specify include directories for GLFW headers explicitly (e.g., if not in default paths):
+# target_include_directories(Coursework PRIVATE /path/to/glfw/include) # Adjust path if needed 

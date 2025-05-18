@@ -1,0 +1,8 @@
+Target dependency graph (4 targets)
+GLEW_1130 in Coursework, no dependencies
+glfw in Coursework, no dependencies
+ZERO_CHECK in Coursework, no dependencies
+Coursework in Coursework, depends on:
+GLEW_1130 in Coursework (explicit)
+glfw in Coursework (explicit)
+ZERO_CHECK in Coursework (explicit)

@@ -1,4 +1,0 @@
-Target dependency graph (2 targets)
-glfw in Computer_Graphics_Coursework, no dependencies
-glfwinfo in Computer_Graphics_Coursework, depends on:
-glfw in Computer_Graphics_Coursework (explicit)

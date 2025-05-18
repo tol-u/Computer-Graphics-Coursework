@@ -1,4 +1,4 @@
-# Install script for directory: /Users/tolu/Desktop/Computer-Graphics-Coursework/external/glfw-3.1.2/src
+# Install script for directory: /Users/tolu/Downloads/Computer-Graphics-Coursework3 2/external/glfw-3.1.2/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,29 +37,29 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
 endif()
 
-set(CMAKE_BINARY_DIR "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build")
+set(CMAKE_BINARY_DIR "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build")
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/Debug/libglfw3.a")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/Debug/libglfw3.a")
     if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a" AND
        NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
     endif()
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/Release/libglfw3.a")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/Release/libglfw3.a")
     if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a" AND
        NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
     endif()
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/MinSizeRel/libglfw3.a")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/MinSizeRel/libglfw3.a")
     if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a" AND
        NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
     endif()
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/RelWithDebInfo/libglfw3.a")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/RelWithDebInfo/libglfw3.a")
     if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a" AND
        NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libglfw3.a")
@@ -69,13 +69,19 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    include("/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
+    include("/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-Debug.cmake" OPTIONAL)
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    include("/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+    include("/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    include("/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-MinSizeRel.cmake" OPTIONAL)
+    include("/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-MinSizeRel.cmake" OPTIONAL)
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    include("/Users/tolu/Desktop/Computer-Graphics-Coursework/Build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-RelWithDebInfo.cmake" OPTIONAL)
+    include("/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/CMakeFiles/glfw.dir/install-cxx-module-bmi-RelWithDebInfo.cmake" OPTIONAL)
   endif()
 endif()
 
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+if(CMAKE_INSTALL_LOCAL_ONLY)
+  file(WRITE "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/external/glfw-3.1.2/src/install_local_manifest.txt"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()

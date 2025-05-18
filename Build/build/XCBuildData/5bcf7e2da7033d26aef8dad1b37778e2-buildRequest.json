@@ -1,0 +1,145 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8f9b633bbb11aa6e631669127c0525c8a"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8ede75840e71ceb773d98022a0bf4de6f"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8ac11bf9f3bff4ec7b87d56b63925fe9f"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8ad767b6cb00195be0962460e7e3ff79d"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f853b3d21643a88208600a6a7cc99d6978"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8ebf91ac5de330f08df4b9df4ec082068"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8dcb6566ca49b2df5ea8360f6cec454ca"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8d378f2f564c1e2c31d41ba07e9bff241"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8379963d57708e1110498a95ab6d887f5"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f808885965af3001108a887f970e3efbb4"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8841adf4fe827447eed8c491b31a1a09d"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8f5b0683bbccfd80e781d384fdc845320"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8cb0aa0e2e5f3b8e36c6bd171f3646465"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8610ea6bda258bea2e0f677b1165b3a62"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f86b8e55e09aab022c07dfa5fc37d0fbe1"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f830cbf2de881cd2e2cd43ab65785d6346"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8b1350a5a0089bbb8bb1104c97afb1667"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8a9113626223f9fb825a1436647695e38"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8074505e116f9d2985d25c03af6f897ae"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8fc64900fc23493e1eb317b7057037d94"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f88b9b33870158ae7d3482d96ef6fb7364"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f84fd7732818493fad773158741238c2a5"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f81564f6c9a9c5396477d400dbca8c47f6"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8c19f9d60a6ff4b8d94d6ada65a3a9613"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8f064be20c6ae4aa7e1e2f52eecbae8e0"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f85b6ef857e7dec9839096d70dcded0b9b"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8485b6a62007f97e6548ec6940e43318e"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f883af6dfa9bcef3b815810140d06f0f68"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f833b209197478fcd7b97f2194dfb9bdfe"
+    },
+    {
+      "guid" : "eed33c8216957f1d29dbb8805ab733f8e874e5dc0a994aec9982dd76337bddd6"
+    }
+  ],
+  "containerPath" : "/Users/tolu/Downloads/Computer-Graphics-Coursework3 2/build/Coursework.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx13.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/tolu/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/tolu/Library/Developer/Xcode/DerivedData/Coursework-digcywuspbjbsfemuhadcerxdmyi/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/tolu/Library/Developer/Xcode/DerivedData/Coursework-digcywuspbjbsfemuhadcerxdmyi/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

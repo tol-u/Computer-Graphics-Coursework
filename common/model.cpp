@@ -12,8 +12,8 @@
 
 Model::Model(const char *path)
 {
-    // Load object
-    bool res = loadObj(path, vertices, uvs, normals);
+    // Load object - now also tries to get tangents/bitangents (will be empty from current loadObj)
+    bool res = loadObj(path, vertices, uvs, normals, tangents, bitangents);
     
     // Setup buffers
     setupBuffers();
@@ -68,6 +68,16 @@ void Model::setupBuffers()
     glGenBuffers(1, &normalBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
     glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), &normals[0], GL_STATIC_DRAW);
+
+    // Create tangent buffer (new)
+    glGenBuffers(1, &tangentBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, tangentBuffer);
+    glBufferData(GL_ARRAY_BUFFER, tangents.size() * sizeof(glm::vec3), &tangents[0], GL_STATIC_DRAW);
+
+    // Create bitangent buffer (new)
+    glGenBuffers(1, &bitangentBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, bitangentBuffer);
+    glBufferData(GL_ARRAY_BUFFER, bitangents.size() * sizeof(glm::vec3), &bitangents[0], GL_STATIC_DRAW);
     
     // Bind the vertex buffer
     glEnableVertexAttribArray(0);
@@ -84,7 +94,17 @@ void Model::setupBuffers()
     glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
     
-     // Bind the VAO
+    // Bind the tangent buffer (new) - Attribute location 3
+    glEnableVertexAttribArray(3);
+    glBindBuffer(GL_ARRAY_BUFFER, tangentBuffer);
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+    // Bind the bitangent buffer (new) - Attribute location 4
+    glEnableVertexAttribArray(4);
+    glBindBuffer(GL_ARRAY_BUFFER, bitangentBuffer);
+    glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+    
+     // Unbind the VAO (corrected from Bind the VAO comment)
     glBindVertexArray(0);
 }
 
@@ -93,16 +113,19 @@ void Model::deleteBuffers()
     glDeleteBuffers(1, &vertexBuffer);
     glDeleteBuffers(1, &uvBuffer);
     glDeleteBuffers(1, &normalBuffer);
+    glDeleteBuffers(1, &tangentBuffer);
+    glDeleteBuffers(1, &bitangentBuffer);
     glDeleteVertexArrays(1, &VAO);
 }
 
 bool Model::loadObj(const char *path,
                     std::vector<glm::vec3> &outVertices,
                     std::vector<glm::vec2> &outUVs,
-                    std::vector<glm::vec3> &outNormals)
+                    std::vector<glm::vec3> &outNormals,
+                    std::vector<glm::vec3> &outTangents,
+                    std::vector<glm::vec3> &outBitangents)
 {
-    
-    printf("Loading file %s\n", path);
+    printf("Loading OBJ file %s\n", path);
     
     std::vector<unsigned int> vertexIndices, uvIndices, normalIndices;
     std::vector<glm::vec3> tempVertices;
@@ -201,6 +224,20 @@ bool Model::loadObj(const char *path,
         outVertices.push_back(vertex);
         outUVs.push_back(uv);
         outNormals.push_back(normal);
+    }
+    
+    // Placeholder: For now, we are not calculating tangents/bitangents from OBJ data.
+    // We will fill them with dummy data matching the vertex count if vertices were loaded.
+    // This allows the VBO setup to proceed without crashing.
+    // A proper implementation would calculate these based on vertex positions and UVs.
+    if (!outVertices.empty()) {
+        outTangents.resize(outVertices.size(), glm::vec3(1.0f, 0.0f, 0.0f)); // Dummy tangent
+        outBitangents.resize(outVertices.size(), glm::vec3(0.0f, 1.0f, 0.0f)); // Dummy bitangent
+        printf("Note: Tangents and Bitangents are currently NOT calculated from OBJ, using dummy data.\n");
+    } else {
+        // if outVertices is empty, make sure tangents/bitangents are also empty to avoid issues with &tangents[0]
+        outTangents.clear();
+        outBitangents.clear();
     }
     
     // Close .obj file

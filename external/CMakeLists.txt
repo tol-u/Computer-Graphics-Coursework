@@ -50,6 +50,10 @@ add_library( GLEW_1130 STATIC
 	${GLEW_INCLUDE}
 )
 
+target_include_directories(GLEW_1130 INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/glew-1.13.0/include
+)
+
 target_link_libraries(GLEW_1130
 	${OPENGL_LIBRARY}
 	${EXTRA_LIBS}
